@@ -25,7 +25,7 @@
 .coordinates { display: flex; align-items: center; gap: 14px; text-transform: uppercase; color: #c0c8dc; }
 .coordinates > span { color: #8e9abd; }
 .coordinates i { width: 4px; height: 4px; margin-right: 3px; border-radius: 50%; background: #e3b47b; box-shadow: 0 0 12px #e7ad6b; }
-.identity { position: absolute; top: 49%; left: 50%; width: min(620px, 72vw); transform: translate(-50%, -25%); text-align: center; }
+.identity { position: absolute; top: 49%; left: 50%; width: min(900px, 82vw); transform: translate(-50%, -25%); text-align: center; }
 .eyebrow { margin: 0 0 28px; font-size: 10px; line-height: 1.7; text-transform: uppercase; letter-spacing: .22em; color: #c7d2ee; }
 .logo { display: block; width: 100%; height: auto; filter: drop-shadow(0 5px 22px #02040f); }
 .subtitle { margin: 30px 0 0; color: #b5bfd4; font-size: 13px; font-weight: 300; letter-spacing: .025em; }
@@ -132,13 +132,13 @@
 }
 @keyframes drift { to { transform: scale(1.065) translate(-.5%, .6%); } }
 @keyframes lightFlow { to { transform: rotate(360deg); } }
-@media (min-aspect-ratio: 21/9) { .identity { width: min(580px, 50vw); } }
+@media (min-aspect-ratio: 21/9) { .identity { width: min(800px, 74vw); } }
 @media (max-width: 640px) {
   .header { inset: max(25px, env(safe-area-inset-top)) 24px auto; }
   .coordinates { font-size: 8px; gap: 8px; letter-spacing: .1em; }
   .project { font-size: 13px; }
   .project > span:last-child, .divider { display: none; }
-  .identity { top: 46%; width: 84vw; }
+  .identity { top: 46%; width: 90vw; }
   .eyebrow { font-size: 8px; letter-spacing: .16em; margin-bottom: 25px; }
   .subtitle { font-size: 10px; line-height: 1.7; margin-top: 26px; }
   .footer { inset: auto 24px max(32px, env(safe-area-inset-bottom)); grid-template-columns: 1fr; justify-items: center; gap: 20px; }
