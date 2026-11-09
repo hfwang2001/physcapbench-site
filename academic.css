@@ -159,3 +159,6 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 /* Institutions precede the report and repository links. */
 .hero .affiliations{padding-bottom:20px}
 .hero>.resources{margin-top:0;margin-bottom:12px}
+
+/* Preserve a quiet watermark with the new, higher-contrast artwork. */
+.page-watermark{opacity:.055}
