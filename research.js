@@ -20,7 +20,7 @@ const strategyBrands={
 };
 function strategyDisplayName(row){
  const company=strategyBrands[row.organization]?.[1];
- return company&&company!==row.name?`${company} · ${row.name}`:row.name;
+ return company&&company!==row.name?`${row.name} · ${company}`:row.name;
 }
 function strategyLabel(row){
  const brand=strategyBrands[row.organization];
@@ -52,6 +52,6 @@ function switchDomain(domain){
 for(const b of document.querySelectorAll('[data-board]'))b.onclick=()=>switchDomain(b.dataset.board);
 $('#csv').onclick=()=>{const lines=[['Rank','Strategy','Organization','Overall',...dimensions.map(d=>d[0])],...data.map(r=>[rank(r.overall,'overall'),r.name,r.organization,r.overall,...r.scores])];const content=lines.map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');const u=URL.createObjectURL(new Blob([content],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=u;a.download=`physcapbench-${domainFiles[activeDomain]}-results.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);toast(`Exported all ${data.length} ${domainNames[activeDomain].toLowerCase()} strategies.`)};
 Promise.all([['ego','leaderboard.json'],['third','leaderboard-third.json']].map(async ([domain,url])=>{
- const response=await fetch(url+'?v=20261110-board-names');if(!response.ok)throw Error();
+ const response=await fetch(url+'?v=20261110-model-first');if(!response.ok)throw Error();
  const rows=await response.json();datasets[domain]=rows.sort((a,b)=>b.overall-a.overall);
 })).then(()=>switchDomain(activeDomain)).catch(()=>{$('#locator-status').textContent='Results could not be loaded. Please refresh to retry.'});
