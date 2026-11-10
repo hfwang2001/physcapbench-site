@@ -18,9 +18,13 @@ const strategyBrands={
  'HPC-AI Tech':['hpcaitech.png','HPC-AI Tech'],
  'Alibaba':['alibaba.png','Alibaba']
 };
+function strategyDisplayName(row){
+ const company=strategyBrands[row.organization]?.[1];
+ return company&&company!==row.name?`${company} · ${row.name}`:row.name;
+}
 function strategyLabel(row){
  const brand=strategyBrands[row.organization];
- return `<span class="strategy-name">${brand?`<img class="strategy-logo" src="assets/brands/${brand[0]}" alt="${brand[1]} logo" title="${brand[1]}" width="22" height="22">`:''}<span>${row.name}</span></span>`;
+ return `<span class="strategy-name">${brand?`<img class="strategy-logo" src="assets/brands/${brand[0]}" alt="${brand[1]} logo" title="${brand[1]}" width="22" height="22">`:''}<span>${strategyDisplayName(row)}</span></span>`;
 }
 function render(){
 $('#table-head').innerHTML='<tr><th scope="col" class="model-col">Caption strategy</th><th scope="col" class="rank-col">#</th><th scope="col" class="metric-header" style="--accent:#a16207" title="Overall mean over per-video scores">PhysCapBench<br>Score</th>'+dimensions.map(([n,c])=>`<th scope="col" class="metric-header" style="--accent:${c}">${n}</th>`).join('')+'</tr>';
@@ -34,7 +38,7 @@ $('#model-names').innerHTML=data.map(r=>`<option value="${r.name}"></option>`).j
 $('#result-count').textContent=`${data.length} strategies · ${domainNames[activeDomain]} · Ranked by overall score`;
 }
 function clearHighlight(){document.querySelectorAll('[data-highlighted]').forEach(r=>r.removeAttribute('data-highlighted'))}
-$('#locator').onsubmit=e=>{e.preventDefault();clearHighlight();const query=$('#search').value.trim().toLowerCase();if(!query){$('#locator-status').textContent='Enter a model or strategy name to locate it.';return}let i=data.findIndex(r=>r.name.toLowerCase()===query);if(i<0)i=data.findIndex(r=>[r.name,r.organization].join(' ').toLowerCase().includes(query));if(i<0){$('#locator-status').textContent=`No matching strategy. All ${data.length} results remain displayed.`;return}const row=$(`#strategy-${i}`);row.dataset.highlighted='true';row.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'nearest'});$('#locator-status').textContent=`Located ${data[i].name} · Overall rank #${rank(data[i].overall,'overall')}.`};
+$('#locator').onsubmit=e=>{e.preventDefault();clearHighlight();const query=$('#search').value.trim().toLowerCase();if(!query){$('#locator-status').textContent='Enter a model or strategy name to locate it.';return}let i=data.findIndex(r=>r.name.toLowerCase()===query);if(i<0)i=data.findIndex(r=>[r.name,r.organization,strategyDisplayName(r).replace(' · ',' ')].join(' ').toLowerCase().includes(query));if(i<0){$('#locator-status').textContent=`No matching strategy. All ${data.length} results remain displayed.`;return}const row=$(`#strategy-${i}`);row.dataset.highlighted='true';row.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'nearest'});$('#locator-status').textContent=`Located ${data[i].name} · Overall rank #${rank(data[i].overall,'overall')}.`};
 $('#search').oninput=()=>{clearHighlight();$('#locator-status').textContent=''};
 $('#jump-top').onclick=()=>{$('#rank-menu').open=false;$('#top-group').scrollIntoView({block:'nearest',inline:'nearest',behavior:'smooth'});clearHighlight();$('#search').value='';$('#locator-status').textContent=`Showing all ${data.length} strategies in overall rank order.`};
 function switchDomain(domain){
@@ -48,6 +52,6 @@ function switchDomain(domain){
 for(const b of document.querySelectorAll('[data-board]'))b.onclick=()=>switchDomain(b.dataset.board);
 $('#csv').onclick=()=>{const lines=[['Rank','Strategy','Organization','Overall',...dimensions.map(d=>d[0])],...data.map(r=>[rank(r.overall,'overall'),r.name,r.organization,r.overall,...r.scores])];const content=lines.map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');const u=URL.createObjectURL(new Blob([content],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=u;a.download=`physcapbench-${domainFiles[activeDomain]}-results.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);toast(`Exported all ${data.length} ${domainNames[activeDomain].toLowerCase()} strategies.`)};
 Promise.all([['ego','leaderboard.json'],['third','leaderboard-third.json']].map(async ([domain,url])=>{
- const response=await fetch(url+'?v=20261110-board-logos');if(!response.ok)throw Error();
+ const response=await fetch(url+'?v=20261110-board-names');if(!response.ok)throw Error();
  const rows=await response.json();datasets[domain]=rows.sort((a,b)=>b.overall-a.overall);
 })).then(()=>switchDomain(activeDomain)).catch(()=>{$('#locator-status').textContent='Results could not be loaded. Please refresh to retry.'});

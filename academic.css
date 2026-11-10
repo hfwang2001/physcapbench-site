@@ -163,11 +163,11 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 /* Preserve a quiet watermark with the new, higher-contrast artwork. */
 .page-watermark{opacity:.055}
 
-/* Small official brand marks beside a single strategy name. */
-.reference-table{--model-width:245px}
+/* Small official brand marks beside company and strategy names. */
+.reference-table{--model-width:345px}
 .strategy-name{display:flex;align-items:center;gap:8px;font-weight:650;line-height:1.4;white-space:nowrap}
 .strategy-logo{width:22px;height:22px;flex:0 0 22px;object-fit:contain;border-radius:3px}
-@media(max-width:720px){.reference-table{--model-width:225px}.strategy-logo{width:20px;height:20px;flex-basis:20px}}
+@media(max-width:720px){.reference-table{--model-width:260px}.strategy-name{white-space:normal}.strategy-logo{width:20px;height:20px;flex-basis:20px}}
 
 /* Keep the dataset introduction close to the benchmark figure. */
 #dataset{padding-top:24px}
