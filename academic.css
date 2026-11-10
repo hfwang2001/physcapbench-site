@@ -22,7 +22,7 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 #overview h2{font-size:30px}
 #overview .section-heading{margin-bottom:24px;gap:45px}
 #overview .section-heading p{font-size:13px}
-#overview>.paper-figure{max-width:850px;margin:24px auto}
+#overview>.paper-figure{max-width:960px;margin:24px auto}
 #overview>.paper-figure img{padding:14px}
 #overview .domain-grid{margin-top:24px}
 @media(max-width:600px){
