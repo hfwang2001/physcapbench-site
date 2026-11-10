@@ -171,3 +171,6 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 
 /* Keep the dataset introduction close to the benchmark figure. */
 #dataset{padding-top:24px}
+
+/* Give the PKU lockup a slightly stronger presence in the institution row. */
+.institution-logos img.pku-logo{transform:scale(1.12);transform-origin:center}
