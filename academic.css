@@ -163,12 +163,11 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 /* Preserve a quiet watermark with the new, higher-contrast artwork. */
 .page-watermark{opacity:.055}
 
-/* Compact strategy and organization labels. */
-.reference-table{--model-width:225px}
-.strategy-name{display:flex;align-items:center;gap:9px;font-weight:650;line-height:1.4}
-.strategy-org{display:block;margin-top:4px;color:#667085;font-size:11px;line-height:1.4;white-space:normal}
-.strategy-logo{width:72px;height:36px;flex:none}
-@media(max-width:720px){.reference-table{--model-width:175px}.strategy-org{font-size:10px}.strategy-logo{width:62px;height:32px}}
+/* Small official brand marks beside a single strategy name. */
+.reference-table{--model-width:245px}
+.strategy-name{display:flex;align-items:center;gap:8px;font-weight:650;line-height:1.4;white-space:nowrap}
+.strategy-logo{width:22px;height:22px;flex:0 0 22px;object-fit:contain;border-radius:3px}
+@media(max-width:720px){.reference-table{--model-width:225px}.strategy-logo{width:20px;height:20px;flex-basis:20px}}
 
 /* Keep the dataset introduction close to the benchmark figure. */
 #dataset{padding-top:24px}

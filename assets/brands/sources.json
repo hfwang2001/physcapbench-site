@@ -1,0 +1,42 @@
+[
+  {
+    "organization": "NVIDIA",
+    "name": "NVIDIA Corporation",
+    "source": "https://github.com/NVIDIA",
+    "asset": "https://avatars.githubusercontent.com/u/1728152?v=4&s=96",
+    "bytes": 4031
+  },
+  {
+    "organization": "Robbyant",
+    "name": "Robbyant",
+    "source": "https://github.com/Robbyant",
+    "asset": "https://avatars.githubusercontent.com/u/212647524?v=4&s=96",
+    "bytes": 1802
+  },
+  {
+    "organization": "zai-org",
+    "name": "Z.ai",
+    "source": "https://github.com/zai-org",
+    "asset": "https://avatars.githubusercontent.com/u/223098841?v=4&s=96",
+    "bytes": 2456
+  },
+  {
+    "organization": "hpcaitech",
+    "name": "HPC-AI Tech",
+    "source": "https://github.com/hpcaitech",
+    "asset": "https://avatars.githubusercontent.com/u/88699314?v=4&s=96",
+    "bytes": 2160
+  },
+  {
+    "organization": "Alibaba",
+    "name": "Alibaba",
+    "source": "https://github.com/alibaba",
+    "asset": "https://avatars.githubusercontent.com/u/1961952?v=4&s=96",
+    "bytes": 2058
+  },
+  {
+    "organization": "Physis",
+    "source": "https://physis-ai.com/",
+    "asset": "https://physis-ai.com/logo-symbol-color.jpg"
+  }
+]

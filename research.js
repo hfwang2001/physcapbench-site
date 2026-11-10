@@ -10,9 +10,21 @@ const domainFiles={ego:'egocentric',third:'third-person'};
 const medal=n=>n<=3?['🥇','🥈','🥉'][n-1]:'';
 const rank=(value,key)=>1+data.filter(row=>(key==='overall'?row.overall:row.scores[key])>value).length;
 function scoreCell(value,n,overall=false){return `<td class="metric-cell${overall?' overall-cell':''}" data-metric-rank="${n}"><div class="cell-score"><span class="cell-rank rank-${n}" aria-label="Rank ${n}">${medal(n)?`<span class="cell-medal" aria-hidden="true">${medal(n)}</span>`:''}#${n}</span><span class="score-value">${value.toFixed(2)}</span></div></td>`}
+const strategyBrands={
+ 'Physis':['physis.jpg','Physis'],
+ 'NVIDIA':['nvidia.png','NVIDIA'],
+ 'Robbyant · Ant Group':['robbyant.png','Robbyant'],
+ 'Z.ai':['zai-org.png','Z.ai'],
+ 'HPC-AI Tech':['hpcaitech.png','HPC-AI Tech'],
+ 'Alibaba':['alibaba.png','Alibaba']
+};
+function strategyLabel(row){
+ const brand=strategyBrands[row.organization];
+ return `<span class="strategy-name">${brand?`<img class="strategy-logo" src="assets/brands/${brand[0]}" alt="${brand[1]} logo" title="${brand[1]}" width="22" height="22">`:''}<span>${row.name}</span></span>`;
+}
 function render(){
 $('#table-head').innerHTML='<tr><th scope="col" class="model-col">Caption strategy</th><th scope="col" class="rank-col">#</th><th scope="col" class="metric-header" style="--accent:#a16207" title="Overall mean over per-video scores">PhysCapBench<br>Score</th>'+dimensions.map(([n,c])=>`<th scope="col" class="metric-header" style="--accent:${c}">${n}</th>`).join('')+'</tr>';
-$('#table-body').innerHTML='<tr id="top-group" class="range-row"><th scope="row" class="model-col">Top '+data.length+'</th><td class="rank-col"></td><td colspan="8"></td></tr>'+data.map((r,i)=>{const n=rank(r.overall,'overall');return `<tr id="strategy-${i}" data-name="${r.name}"><th scope="row" class="model-col"><span class="strategy-name">${r.name==='Physis'?'<svg class="strategy-logo" viewBox="414 207 981 499" aria-hidden="true" focusable="false"><image href="assets/physis-logo-black.png" width="1821" height="864"/></svg>':''}${r.name==='Physis'?'<span class="sr-only">Physis</span>':r.name}</span>${r.organization&&r.name!=='Physis'?`<span class="strategy-org">${r.organization}</span>`:''}</th><td class="rank-col"><span class="rank-badge" aria-label="Overall rank ${n}">${medal(n)?`<span class="row-medal" aria-hidden="true">${medal(n)}</span>`:n}</span></td>${scoreCell(r.overall,n,true)}${r.scores.map((v,j)=>scoreCell(v,rank(v,j))).join('')}</tr>`}).join('');
+$('#table-body').innerHTML='<tr id="top-group" class="range-row"><th scope="row" class="model-col">Top '+data.length+'</th><td class="rank-col"></td><td colspan="8"></td></tr>'+data.map((r,i)=>{const n=rank(r.overall,'overall');return `<tr id="strategy-${i}" data-name="${r.name}"><th scope="row" class="model-col">${strategyLabel(r)}</th><td class="rank-col"><span class="rank-badge" aria-label="Overall rank ${n}">${medal(n)?`<span class="row-medal" aria-hidden="true">${medal(n)}</span>`:n}</span></td>${scoreCell(r.overall,n,true)}${r.scores.map((v,j)=>scoreCell(v,rank(v,j))).join('')}</tr>`}).join('');
 $('#board-count').textContent=`Reported strategies: ${data.length}`;
 $('#rank-menu summary').textContent=`Top ${data.length}`;
 $('#jump-top').textContent=`Top ${data.length} · All results`;
@@ -36,6 +48,6 @@ function switchDomain(domain){
 for(const b of document.querySelectorAll('[data-board]'))b.onclick=()=>switchDomain(b.dataset.board);
 $('#csv').onclick=()=>{const lines=[['Rank','Strategy','Organization','Overall',...dimensions.map(d=>d[0])],...data.map(r=>[rank(r.overall,'overall'),r.name,r.organization,r.overall,...r.scores])];const content=lines.map(row=>row.map(v=>'"'+String(v).replaceAll('"','""')+'"').join(',')).join('\r\n');const u=URL.createObjectURL(new Blob([content],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=u;a.download=`physcapbench-${domainFiles[activeDomain]}-results.csv`;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000);toast(`Exported all ${data.length} ${domainNames[activeDomain].toLowerCase()} strategies.`)};
 Promise.all([['ego','leaderboard.json'],['third','leaderboard-third.json']].map(async ([domain,url])=>{
- const response=await fetch(url+'?v=20261110-board-clean');if(!response.ok)throw Error();
+ const response=await fetch(url+'?v=20261110-board-logos');if(!response.ok)throw Error();
  const rows=await response.json();datasets[domain]=rows.sort((a,b)=>b.overall-a.overall);
 })).then(()=>switchDomain(activeDomain)).catch(()=>{$('#locator-status').textContent='Results could not be loaded. Please refresh to retry.'});
