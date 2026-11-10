@@ -1,131 +1,17 @@
 [
   {
-    "name": "CogVideoX",
+    "name": "Physis",
     "scores": [
-      63.99,
-      71.38,
-      72.64,
-      73.74,
-      73.05,
-      69.28,
-      66.64
+      69.68,
+      74.69,
+      74.77,
+      75.97,
+      75.98,
+      67.94,
+      72.32
     ],
-    "overall": 70.62,
-    "organization": "Z.ai / Tsinghua",
-    "sourceProject": "CogVideoX",
-    "sourceUrl": "https://github.com/zai-org/CogVideo/tree/7a1af7154511e0ce4e4be8d62faa8c5e5a3532d2/tools/caption"
-  },
-  {
-    "name": "Open-Sora v1.3",
-    "scores": [
-      64.85,
-      71.92,
-      72.5,
-      73.5,
-      73.52,
-      68.98,
-      67.21
-    ],
-    "overall": 70.94,
-    "organization": "HPC-AI Tech",
-    "sourceProject": "Open-Sora v1.3",
-    "sourceUrl": "https://github.com/hpcaitech/Open-Sora/tree/b096aa3c1c59de663f1f40bf091945ee3f9ec455/tools/caption"
-  },
-  {
-    "name": "EgoVid Dense",
-    "scores": [
-      64.43,
-      71.5,
-      71.63,
-      73.25,
-      73.09,
-      67.04,
-      67.62
-    ],
-    "overall": 70.52,
-    "organization": "Alibaba / Tsinghua / CASIA / UCAS",
-    "sourceProject": "EgoVid-5M",
-    "sourceUrl": "https://egovid.github.io/"
-  },
-  {
-    "name": "EgoVid Action",
-    "scores": [
-      64.26,
-      70.25,
-      71.72,
-      72.85,
-      72.39,
-      64.81,
-      66.16
-    ],
-    "overall": 69.92,
-    "organization": "Alibaba / Tsinghua / CASIA / UCAS",
-    "sourceProject": "EgoVid-5M",
-    "sourceUrl": "https://egovid.github.io/"
-  },
-  {
-    "name": "Cosmos Robot-action",
-    "scores": [
-      65.66,
-      72.4,
-      72.73,
-      72.04,
-      73.6,
-      63.66,
-      66.43
-    ],
-    "overall": 70.86,
-    "organization": "NVIDIA",
-    "sourceProject": "Cosmos Curator · Robot Action",
-    "sourceUrl": "https://github.com/NVIDIA/cosmos-curator/blob/b064a68e39962ea80c1ae33fc021f89c30fe59cb/cosmos_curator/next/recipes/robot_action_caption/prompt.py"
-  },
-  {
-    "name": "Cosmos Curator General",
-    "scores": [
-      64.15,
-      71.92,
-      72.82,
-      74.05,
-      74.06,
-      68.62,
-      68.27
-    ],
-    "overall": 71.18,
-    "organization": "NVIDIA",
-    "sourceProject": "Cosmos Curator",
-    "sourceUrl": "https://github.com/NVIDIA/cosmos-curator/blob/b064a68e39962ea80c1ae33fc021f89c30fe59cb/cosmos_curator/models/prompts.py"
-  },
-  {
-    "name": "Cosmos3 Narrative",
-    "scores": [
-      63.81,
-      71.12,
-      73.66,
-      75.48,
-      74.98,
-      71.0,
-      69.17
-    ],
-    "overall": 71.7,
-    "organization": "NVIDIA",
-    "sourceProject": "Cosmos 3",
-    "sourceUrl": "https://github.com/NVIDIA/cosmos-framework/blob/9e160cf1d70f8cff66e4b593a048b84032610250/cosmos_framework/inference/defaults/video_captioner.txt"
-  },
-  {
-    "name": "LingBot Narrative",
-    "scores": [
-      66.13,
-      71.92,
-      73.22,
-      73.86,
-      74.74,
-      69.28,
-      68.45
-    ],
-    "overall": 71.69,
-    "organization": "Robbyant / Ant Group",
-    "sourceProject": "LingBot-World v1 · Paper reconstruction",
-    "sourceUrl": "https://arxiv.org/html/2601.20540v1#S2.SS3"
+    "overall": 74.07,
+    "organization": "Physis"
   },
   {
     "name": "LingBot Temporal",
@@ -139,9 +25,119 @@
       72.84
     ],
     "overall": 72.91,
-    "organization": "Robbyant / Ant Group",
-    "sourceProject": "LingBot-World v1 · Paper reconstruction",
-    "sourceUrl": "https://arxiv.org/html/2601.20540v1#S2.SS3"
+    "organization": "Robbyant · Ant Group"
+  },
+  {
+    "name": "Cosmos3 Narrative",
+    "scores": [
+      63.81,
+      71.12,
+      73.66,
+      75.48,
+      74.98,
+      71.0,
+      69.17
+    ],
+    "overall": 71.7,
+    "organization": "NVIDIA"
+  },
+  {
+    "name": "LingBot Narrative",
+    "scores": [
+      66.13,
+      71.92,
+      73.22,
+      73.86,
+      74.74,
+      69.28,
+      68.45
+    ],
+    "overall": 71.69,
+    "organization": "Robbyant · Ant Group"
+  },
+  {
+    "name": "Cosmos Curator General",
+    "scores": [
+      64.15,
+      71.92,
+      72.82,
+      74.05,
+      74.06,
+      68.62,
+      68.27
+    ],
+    "overall": 71.18,
+    "organization": "NVIDIA"
+  },
+  {
+    "name": "Open-Sora v1.3",
+    "scores": [
+      64.85,
+      71.92,
+      72.5,
+      73.5,
+      73.52,
+      68.98,
+      67.21
+    ],
+    "overall": 70.94,
+    "organization": "HPC-AI Tech"
+  },
+  {
+    "name": "Cosmos Robot-action",
+    "scores": [
+      65.66,
+      72.4,
+      72.73,
+      72.04,
+      73.6,
+      63.66,
+      66.43
+    ],
+    "overall": 70.86,
+    "organization": "NVIDIA"
+  },
+  {
+    "name": "CogVideoX",
+    "scores": [
+      63.99,
+      71.38,
+      72.64,
+      73.74,
+      73.05,
+      69.28,
+      66.64
+    ],
+    "overall": 70.62,
+    "organization": "Z.ai"
+  },
+  {
+    "name": "EgoVid Dense",
+    "scores": [
+      64.43,
+      71.5,
+      71.63,
+      73.25,
+      73.09,
+      67.04,
+      67.62
+    ],
+    "overall": 70.52,
+    "organization": "Alibaba"
+  },
+  {
+    "name": "EgoVid Action",
+    "scores": [
+      64.26,
+      70.25,
+      71.72,
+      72.85,
+      72.39,
+      64.81,
+      66.16
+    ],
+    "overall": 69.92,
+    "organization": "Alibaba"
   },
   {
     "name": "Meta caption",
@@ -155,24 +151,6 @@
       42.84
     ],
     "overall": 54.32,
-    "organization": "Dataset metadata",
-    "sourceProject": "Original source caption",
-    "sourceUrl": ""
-  },
-  {
-    "name": "LingBot Static",
-    "scores": [
-      23.08,
-      50.0,
-      26.22,
-      35.18,
-      35.01,
-      25.85,
-      17.39
-    ],
-    "overall": 32.12,
-    "organization": "Robbyant / Ant Group",
-    "sourceProject": "LingBot-World v1 · Paper reconstruction",
-    "sourceUrl": "https://arxiv.org/html/2601.20540v1#S2.SS3"
+    "organization": ""
   }
 ]

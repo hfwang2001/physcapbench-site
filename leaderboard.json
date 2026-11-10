@@ -11,9 +11,7 @@
       56.25
     ],
     "overall": 57.16,
-    "organization": "Z.ai / Tsinghua",
-    "sourceProject": "CogVideoX",
-    "sourceUrl": "https://github.com/zai-org/CogVideo/tree/7a1af7154511e0ce4e4be8d62faa8c5e5a3532d2/tools/caption"
+    "organization": "Z.ai"
   },
   {
     "name": "Open-Sora v1.3",
@@ -27,9 +25,7 @@
       66.25
     ],
     "overall": 58.01,
-    "organization": "HPC-AI Tech",
-    "sourceProject": "Open-Sora v1.3",
-    "sourceUrl": "https://github.com/hpcaitech/Open-Sora/tree/b096aa3c1c59de663f1f40bf091945ee3f9ec455/tools/caption"
+    "organization": "HPC-AI Tech"
   },
   {
     "name": "EgoVid Dense",
@@ -43,9 +39,7 @@
       63.75
     ],
     "overall": 58.42,
-    "organization": "Alibaba / Tsinghua / CASIA / UCAS",
-    "sourceProject": "EgoVid-5M",
-    "sourceUrl": "https://egovid.github.io/"
+    "organization": "Alibaba"
   },
   {
     "name": "EgoVid Action",
@@ -59,9 +53,7 @@
       67.5
     ],
     "overall": 55.58,
-    "organization": "Alibaba / Tsinghua / CASIA / UCAS",
-    "sourceProject": "EgoVid-5M",
-    "sourceUrl": "https://egovid.github.io/"
+    "organization": "Alibaba"
   },
   {
     "name": "Cosmos Ego",
@@ -75,9 +67,7 @@
       77.5
     ],
     "overall": 75.41,
-    "organization": "NVIDIA",
-    "sourceProject": "Cosmos Curator · Robot Action",
-    "sourceUrl": "https://github.com/NVIDIA/cosmos-curator/blob/b064a68e39962ea80c1ae33fc021f89c30fe59cb/cosmos_curator/next/recipes/robot_action_caption/prompt.py"
+    "organization": "NVIDIA"
   },
   {
     "name": "Physis",
@@ -91,9 +81,7 @@
       75.75
     ],
     "overall": 79.36,
-    "organization": "Physis",
-    "sourceProject": "Physical captioning",
-    "sourceUrl": "https://physis-ai.com/"
+    "organization": "Physis"
   },
   {
     "name": "Meta caption",
@@ -107,8 +95,6 @@
       42.5
     ],
     "overall": 42.41,
-    "organization": "Dataset metadata",
-    "sourceProject": "Original source caption",
-    "sourceUrl": ""
+    "organization": ""
   }
 ]
