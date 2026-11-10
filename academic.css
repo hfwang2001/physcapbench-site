@@ -18,11 +18,11 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 .institution-logos img{width:155px;max-height:43px}
 .hero-watermark{position:absolute;z-index:-1;bottom:-12px;left:50%;transform:translateX(-50%);width:min(760px,90%);line-height:0;opacity:.38}
 .hero-watermark img{width:100%;height:auto}
-#overview{padding-top:42px;padding-bottom:52px}
+#overview{padding-top:42px;padding-bottom:16px}
 #overview h2{font-size:30px}
 #overview .section-heading{margin-bottom:24px;gap:45px}
 #overview .section-heading p{font-size:13px}
-#overview>.paper-figure{max-width:960px;margin:24px auto}
+#overview>.paper-figure{max-width:1080px;margin:24px auto 0}
 #overview>.paper-figure img{padding:14px}
 #overview .domain-grid{margin-top:24px}
 @media(max-width:600px){
@@ -39,10 +39,10 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 .institution-logos{padding-top:18px;height:54px;gap:24px}
 .institution-logos img{width:115px;max-height:36px}
 .hero-watermark{width:94%;bottom:0}
-#overview{padding-top:30px;padding-bottom:40px}
+#overview{padding-top:30px;padding-bottom:12px}
 #overview h2{font-size:25px}
 #overview .section-heading{gap:14px;margin-bottom:18px}
-#overview>.paper-figure{width:94%;margin:18px auto}
+#overview>.paper-figure{width:100%;margin:18px auto 0}
 #overview>.paper-figure img{padding:6px}
 }
 
@@ -171,3 +171,6 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 a.strategy-source:hover{text-decoration:underline;color:#234dbc}
 a.strategy-source:focus-visible{outline:2px solid #526992;outline-offset:3px}
 @media(max-width:720px){.reference-table{--model-width:185px}.strategy-org,.strategy-source{font-size:10px}}
+
+/* Keep the dataset introduction close to the benchmark figure. */
+#dataset{padding-top:24px}
