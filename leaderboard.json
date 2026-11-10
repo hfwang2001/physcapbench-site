@@ -10,7 +10,10 @@
       25.83,
       56.25
     ],
-    "overall": 57.16
+    "overall": 57.16,
+    "organization": "Z.ai / Tsinghua",
+    "sourceProject": "CogVideoX",
+    "sourceUrl": "https://github.com/zai-org/CogVideo/tree/7a1af7154511e0ce4e4be8d62faa8c5e5a3532d2/tools/caption"
   },
   {
     "name": "Open-Sora v1.3",
@@ -23,7 +26,10 @@
       31.42,
       66.25
     ],
-    "overall": 58.01
+    "overall": 58.01,
+    "organization": "HPC-AI Tech",
+    "sourceProject": "Open-Sora v1.3",
+    "sourceUrl": "https://github.com/hpcaitech/Open-Sora/tree/b096aa3c1c59de663f1f40bf091945ee3f9ec455/tools/caption"
   },
   {
     "name": "EgoVid Dense",
@@ -36,7 +42,10 @@
       30.0,
       63.75
     ],
-    "overall": 58.42
+    "overall": 58.42,
+    "organization": "Alibaba / Tsinghua / CASIA / UCAS",
+    "sourceProject": "EgoVid-5M",
+    "sourceUrl": "https://egovid.github.io/"
   },
   {
     "name": "EgoVid Action",
@@ -49,7 +58,10 @@
       35.83,
       67.5
     ],
-    "overall": 55.58
+    "overall": 55.58,
+    "organization": "Alibaba / Tsinghua / CASIA / UCAS",
+    "sourceProject": "EgoVid-5M",
+    "sourceUrl": "https://egovid.github.io/"
   },
   {
     "name": "Cosmos Ego",
@@ -62,7 +74,10 @@
       46.5,
       77.5
     ],
-    "overall": 75.41
+    "overall": 75.41,
+    "organization": "NVIDIA",
+    "sourceProject": "Cosmos Curator · Robot Action",
+    "sourceUrl": "https://github.com/NVIDIA/cosmos-curator/blob/b064a68e39962ea80c1ae33fc021f89c30fe59cb/cosmos_curator/next/recipes/robot_action_caption/prompt.py"
   },
   {
     "name": "Physis",
@@ -75,7 +90,10 @@
       49.58,
       75.75
     ],
-    "overall": 79.36
+    "overall": 79.36,
+    "organization": "Physis",
+    "sourceProject": "Physical captioning",
+    "sourceUrl": "https://physis-ai.com/"
   },
   {
     "name": "Meta caption",
@@ -88,6 +106,9 @@
       7.08,
       42.5
     ],
-    "overall": 42.41
+    "overall": 42.41,
+    "organization": "Dataset metadata",
+    "sourceProject": "Original source caption",
+    "sourceUrl": ""
   }
 ]

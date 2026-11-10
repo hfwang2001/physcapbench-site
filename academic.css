@@ -162,3 +162,12 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 
 /* Preserve a quiet watermark with the new, higher-contrast artwork. */
 .page-watermark{opacity:.055}
+
+/* Caption strategy attribution */
+.reference-table{--model-width:245px}
+.strategy-name{display:block;font-weight:650;line-height:1.35}
+.strategy-org{display:block;margin-top:5px;color:#555f70;font-size:11px;line-height:1.4;white-space:normal}
+.strategy-source{display:block;margin-top:2px;color:#526992;font-size:11px;font-weight:400;line-height:1.4;white-space:normal;text-decoration:none}
+a.strategy-source:hover{text-decoration:underline;color:#234dbc}
+a.strategy-source:focus-visible{outline:2px solid #526992;outline-offset:3px}
+@media(max-width:720px){.reference-table{--model-width:185px}.strategy-org,.strategy-source{font-size:10px}}
