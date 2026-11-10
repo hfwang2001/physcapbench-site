@@ -165,9 +165,14 @@ body{background:#fff;color:#151719}.nav{background:#fffffff2;border-bottom:1px s
 
 /* Small official brand marks beside company and strategy names. */
 .reference-table{--model-width:345px}
-.strategy-name{display:flex;align-items:center;gap:8px;font-weight:650;line-height:1.4;white-space:nowrap}
-.strategy-logo{width:22px;height:22px;flex:0 0 22px;object-fit:contain;border-radius:3px}
-@media(max-width:720px){.reference-table{--model-width:260px}.strategy-name{white-space:normal}.strategy-logo{width:20px;height:20px;flex-basis:20px}}
+.strategy-name{display:flex;align-items:center;gap:10px;font-size:15.5px;font-weight:650;line-height:1.4;white-space:nowrap}
+.strategy-logo{width:30px;height:30px;flex:0 0 30px;object-fit:contain;border-radius:4px}
+.reference-table .score-value{font-size:15.5px}
+.reference-table .cell-rank{font-size:11px}
+.reference-table thead th{font-size:12px}
+.reference-table thead .model-col,.reference-table thead .rank-col{font-size:13px}
+.reference-table .rank-badge{font-size:13px}
+@media(max-width:720px){.reference-table{--model-width:260px}.strategy-name{white-space:normal;font-size:14px}.strategy-logo{width:26px;height:26px;flex-basis:26px}.reference-table .score-value{font-size:15px}}
 
 /* Keep the dataset introduction close to the benchmark figure. */
 #dataset{padding-top:24px}
