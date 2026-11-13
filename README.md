@@ -14,4 +14,4 @@ Run `python3 -m http.server 4181 --bind 127.0.0.1` in this directory and open ht
 
 Edit the files in this repository, commit, and push to `main`. GitHub Pages publishes directly from the root of `main`; no build step is required. Keep `.nojekyll` tracked.
 
-`index.html` is the About introduction; `intro.html` is the research page. Resource links are configured in `links.js`; the tech report URL is currently pending. Styles are in `academic.css`, `research.css`, and `story.css`; leaderboard data are in `leaderboard.json` and `leaderboard-third.json`. Keep the complete `assets/` directory when deploying.
+`index.html` is the About introduction; `intro.html` is the research page. Resource links are configured in `links.js`; the tech report is available at https://arxiv.org/abs/2611.16424. Styles are in `academic.css`, `research.css`, and `story.css`; leaderboard data are in `leaderboard.json` and `leaderboard-third.json`. Keep the complete `assets/` directory when deploying.
