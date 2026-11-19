@@ -55,3 +55,19 @@ Promise.all([['ego','leaderboard.json'],['third','leaderboard-third.json']].map(
  const response=await fetch(url+'?v=20261110-model-first');if(!response.ok)throw Error();
  const rows=await response.json();datasets[domain]=rows.sort((a,b)=>b.overall-a.overall);
 })).then(()=>switchDomain(activeDomain)).catch(()=>{$('#locator-status').textContent='Results could not be loaded. Please refresh to retry.'});
+
+const copyCitation=$('#copy-citation');
+if(copyCitation)copyCitation.addEventListener('click',async()=>{
+ const code=$('#citation-code'),status=$('#citation-status');
+ try{
+  await navigator.clipboard.writeText(code.textContent.trim()+'\n');
+  status.textContent='BibTeX copied to clipboard.';
+  copyCitation.textContent='Copied!';
+  clearTimeout(copyCitation.resetTimer);
+  copyCitation.resetTimer=setTimeout(()=>{copyCitation.textContent='Copy BibTeX'},2000);
+ }catch{
+  const range=document.createRange();range.selectNodeContents(code);
+  const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
+  status.textContent='Copy unavailable. The citation is selected; copy it manually or download the .bib file.';
+ }
+});
